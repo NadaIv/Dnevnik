@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Dnevnik.ViewModels.Ucen_PredmGroup>
+
+@{
+    ViewBag.Title = "Student Body Statistics";
+}
+
+<h2>Student Body Statistics</h2>
+
+<table>
+    <tr>
+        <th>
+            Datum upisa
+        </th>
+        <th>
+            Ucenici
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumUpisa)
+            </td>
+            <td>
+                @item.UceniciCount
+            </td>
+        </tr>
+    }
+</table>

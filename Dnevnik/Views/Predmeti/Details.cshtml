@@ -1,0 +1,50 @@
+﻿@model Dnevnik.Models.Predmeti
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Predmeti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Odeljenje
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Odeljenja.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PredmetiID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PredmetiID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NazivPredmeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazivPredmeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PredmetiID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

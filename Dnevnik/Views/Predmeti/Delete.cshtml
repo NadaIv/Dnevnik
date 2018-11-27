@@ -1,0 +1,56 @@
+﻿@model Dnevnik.Models.Predmeti
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Predmeti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Odeljenje
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Odeljenja.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PredmetiID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PredmetiID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NazivPredmeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazivPredmeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

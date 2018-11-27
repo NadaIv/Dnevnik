@@ -1,0 +1,131 @@
+﻿@model Dnevnik.ViewModels.ProfesoriIndexData
+
+@{
+    ViewBag.Title = "Profesori";
+}
+
+<h2>Profesori</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Ime
+        </th>
+        <th>
+            Prezime
+        </th>
+        <th>
+            Datum zaposlenja
+        </th>
+        <th>
+            Kancelarija
+        </th>
+        <th>
+            Predmeti
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Profesoris)
+    {
+        string selectedRow = "";
+        if (item.ID == ViewBag.ProfesoriID)
+        {
+            selectedRow = "success";
+        }
+    <tr class="@selectedRow">
+        <td>
+            @Html.DisplayFor(modelItem => item.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumZaposlenja)
+        </td>
+        <td>
+            @if (item.KancelarijaDodela != null)
+            {
+                @item.KancelarijaDodela.Lokacija
+            }
+        </td>
+        <td>
+            @{
+                foreach (var predmeti in item.Predmetis)
+                {
+                    @predmeti.PredmetiID @:  @predmeti.NazivPredmeta <br />
+                }
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Select", "Index", new { id = item.ID }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+        </td>
+    </tr>
+    }
+
+</table>
+@if (Model.Predmetis != null)
+{
+    <h3>Courses Taught by Selected Instructor</h3>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Broj</th>
+            <th>Naziv predmeta</th>
+            <th>Odeljenja</th>
+        </tr>
+
+        @foreach (var item in Model.Predmetis)
+        {
+            string selectedRow = "";
+            if (item.PredmetiID == ViewBag.PredmetiID)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @Html.ActionLink("Select", "Index", new { predmetiID = item.PredmetiID })
+                </td>
+                <td>
+                    @item.PredmetiID
+                </td>
+                <td>
+                    @item.NazivPredmeta
+                </td>
+                <td>
+                    @item.Odeljenja.Ime
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+    @if (Model.Ucen_Predms != null)
+    {
+        <h3>
+            Students Enrolled in Selected Course
+        </h3>
+        <table class="table">
+            <tr>
+                <th>Ime</th>
+                <th>Ocena</th>
+            </tr>
+            @foreach (var item in Model.Ucen_Predms)
+            {
+                <tr>
+                    <td>
+                        @item.Ucenici.ImeIPrezime
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ocene)
+                    </td>
+                </tr>
+            }
+        </table>
+    }

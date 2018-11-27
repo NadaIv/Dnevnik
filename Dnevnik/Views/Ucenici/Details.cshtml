@@ -1,0 +1,63 @@
+﻿@model Dnevnik.Models.Ucenici
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ucenici</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumUpisa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumUpisa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ucen_Predms)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Predmet</th>
+                    <th>Ocena</th>
+                </tr>
+                @foreach (var item in Model.Ucen_Predms)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Predmeti.NazivPredmeta)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ocene)
+                        </td>
+                    </tr>
+                }
+            </table>
+            </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

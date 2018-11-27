@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Dnevnik.Models.Predmeti>
+
+@{
+    ViewBag.Title = "Predmeti";
+}
+
+<h2>Predmeti</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Select Odeljenja: @Html.DropDownList("SelectedOdeljenja", "All")
+        <input type="submit" value="Filter" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PredmetiID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NazivPredmeta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cena)
+        </th>
+        <th>
+            Odeljenja
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PredmetiID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazivPredmeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Odeljenja.Ime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PredmetiID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PredmetiID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PredmetiID })
+            </td>
+        </tr>
+    }
+
+</table>
