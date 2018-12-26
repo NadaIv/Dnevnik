@@ -61,13 +61,9 @@ C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\Microsoft.CodeDom.Providers.DotNetComp
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\Newtonsoft.Json.dll
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.Helpers.dll
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.Mvc.dll
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.Optimization.dll
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.Razor.dll
-C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.WebPages.dll
-C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.WebPages.Razor.dll
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\WebGrease.dll
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.Helpers.xml
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.Mvc.xml
@@ -102,3 +98,7 @@ C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\obj\Debug\Dnevnik.csproj.GenerateResource.
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\obj\Debug\Dnevnik.Migrations.OdeljenjaSP.resources
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\obj\Debug\Dnevnik.Migrations.RowVersion.resources
 C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\obj\Debug\Dnevnik.Migrations.Inheritance.resources
+C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.Helpers.dll
+C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.WebPages.dll
+C:\Users\Zoka\Desktop\Dnevnik\Dnevnik\bin\System.Web.WebPages.Razor.dll
