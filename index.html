@@ -1,27 +1,45 @@
-<div class="jumbotron">
-    <h1>Dnevnik</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Dnevnik</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dnevnik", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Ucenici", "Index", "Ucenici")</li>
+                    <li>@Html.ActionLink("Predmeti", "Index", "Predmeti")</li>
+                    <li>@Html.ActionLink("Profesori", "Index", "Profesori")</li>
+                    <li>@Html.ActionLink("Odeljenja", "Index", "Odeljenja")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Dnevnik</p>
+        </footer>
     </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Dobrodosli u Dnevnik</h2>
-        <p>
-            Dnevnik je jednostavna aplikacija koja koristi Entity Framework 6 u
-            ASP.NET MVC 5 web aplikaciji.
-        </p>
-        </div>
-    <div class="col-md-4">
-        <h2>Uzmite vise biblioteka</h2>
-        <p>
-            NuGet je besplatan Visual Studio dodatak koji olaksava dodavanje, 
-            uklanjanje i azuriranje biblioteka i alata u Visual Studio projektima.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>
-            Mozete lako naci Web Hosting kompaniju koja nudi pravu kombinaciju 
-            funkcija i cene za vase aplikacije .</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
